@@ -1,0 +1,71 @@
+.login-title{
+    color: black;
+    font-size:1.2em;
+    text-align:left;
+    margin-top:7vh;
+    font-family: 'Merriweather';
+}
+.login-fieldInput{
+    border-radius:0px;
+    height:4vh;
+    width: 15vw;
+}
+.login-loginButton{
+    height: 5vh;
+    width:10vw;
+    margin-left:2.2vw;
+}
+.login-container{
+    position:absolute;
+    top:10%;
+    bottom:10%;
+    left:10%;
+    right:10%;
+}
+.login-leftContainer{
+    position: relative;
+    width: 30%;
+    height: 100%;
+    float:left;
+}
+.login-left{
+    position:relative;
+    top:20%;
+    left:20%;
+}
+.login-typical{
+    margin-top:1.2vh;
+}
+.login-crux{
+    padding-left:2vw;
+}
+.login-googleLogin{
+    margin-left:0.8vw;
+}
+.login-SignUpLink{
+    padding-left:1vw;
+}
+.login-OR{
+    padding-left:6.3vw;
+}
+.login-splitBorder{
+    position: relative;
+    border-left: 1px solid black;
+    width: 1px;
+    float:right;
+    height: 70%;
+    top: 15%;
+    right:66%;
+}
+.login-rightContainer{
+    position: relative;
+    width: 69%;
+    height: 100%;
+    float:left;
+}
+.login-right 
+{
+    position:relative;
+    top:15%;
+    left:08%;
+}
