@@ -11,9 +11,13 @@ class Login extends React.Component{
         super(props);
 
         this.logIn = this.logIn.bind(this);
+        this.handleSignUpClick = this.handleSignUpClick.bind(this);
     }
     logIn(e){
         this.props.onLogin(true);
+    }
+    handleSignUpClick(e){
+        this.props.onSignUp(true);
     }
     render(){
         return (<div className="login">
@@ -38,7 +42,7 @@ class Login extends React.Component{
                         </div>
                         </div>
                         <br/>
-                        <span className="login-SignUpLink">Don't have an account? <a href="http://www.google.com">Sign up</a> here</span>
+                        <span className="login-SignUpLink">Don't have an account? <button onClick={this.handleSignUpClick}>Sign up</button> here</span>
             </div>
             </div>
             <div className="login-splitBorder"></div>
