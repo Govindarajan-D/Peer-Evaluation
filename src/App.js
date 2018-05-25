@@ -7,12 +7,10 @@ class App extends Component {
     super(props);
     //Need to get from server the login status
     this.state = {loggedIn: false, signUp:true};
-    this.changeLoginStatus = this.changeLoginStatus.bind(this);
-    this.renderSignUp = this.renderSignUp.bind(this);
     this.checkLogin();
   }
   //Need to handle when clicked SignUp
-  checkLogin(){
+  checkLogin = () => {
     if(!this.state.loggedIn){
       this.pageToRender = (<Login loginStatus={this.state.loggedIn} onLogin={this.changeLoginStatus} onSignUp={this.renderSignUp}/>);
       this.userName = "Sign in";
@@ -23,20 +21,20 @@ class App extends Component {
       this.userName = this.fetchUserName();
     }
   }
-  changeLoginStatus(loginStatus){
+  changeLoginStatus = (loginStatus) => {
     this.checkLogin();
     this.setState({
       loggedIn: loginStatus
     });
 
   }
-  renderSignUp(userSignUp){
+  renderSignUp = (userSignUp) => {
     this.pageToRender = (<SignUp />);
     this.setState({
       signUp:userSignUp
     });
   }
-  fetchUserName(){
+  fetchUserName = () => {
     return "Govi";
   }
   render() {

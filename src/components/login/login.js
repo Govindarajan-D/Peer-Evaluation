@@ -9,14 +9,11 @@ const googleResponse = (response) => {
 class Login extends React.Component{
     constructor(props){
         super(props);
-
-        this.logIn = this.logIn.bind(this);
-        this.handleSignUpClick = this.handleSignUpClick.bind(this);
     }
-    logIn(e){
+    logIn = (e) => {
         this.props.onLogin(true);
     }
-    handleSignUpClick(e){
+    handleSignUpClick = (e) => {
         this.props.onSignUp(true);
     }
     render(){
