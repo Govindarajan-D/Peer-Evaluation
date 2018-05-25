@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import { Login, NavBar, SignUp} from './components';
+import { userReducer } from './reducers/userReducer';
+import { userDetails } from './actions/userAction';
+import { createStore } from 'redux';
 import './App.css';
+
+const store = createStore(userReducer);
 
 class App extends Component {
   constructor(props){
@@ -22,10 +27,11 @@ class App extends Component {
     }
   }
   changeLoginStatus = (loginStatus) => {
-    this.checkLogin();
+    store.dispatch(userDetails());
     this.setState({
       loggedIn: loginStatus
     });
+    this.checkLogin();
 
   }
   renderSignUp = (userSignUp) => {
