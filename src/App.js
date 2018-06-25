@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { Login, NavBar, SignUp} from './components';
 import { userReducer } from './reducers/userReducer';
 import { userDetails } from './actions/userAction';
-import { createStore } from 'redux';
+import store from "./store/index";
 import './App.css';
-
-const store = createStore(userReducer);
 
 class App extends Component {
   constructor(props){
@@ -17,6 +15,7 @@ class App extends Component {
   //Need to handle when clicked SignUp
   checkLogin = () => {
     if(!this.state.loggedIn){
+      //Bug - Only when login is pressed twice, the home page opens
       this.pageToRender = (<Login loginStatus={this.state.loggedIn} onLogin={this.changeLoginStatus} onSignUp={this.renderSignUp}/>);
       this.userName = "Sign in";
     }
@@ -27,7 +26,8 @@ class App extends Component {
     }
   }
   changeLoginStatus = (loginStatus) => {
-    store.dispatch(userDetails());
+    store.dispatch(userDetails(this.username));
+    this.setState(store.getState());
     this.setState({
       loggedIn: loginStatus
     });
@@ -41,7 +41,7 @@ class App extends Component {
     });
   }
   fetchUserName = () => {
-    return "Govi";
+    return "Govi2";
   }
   render() {
     return (<div>

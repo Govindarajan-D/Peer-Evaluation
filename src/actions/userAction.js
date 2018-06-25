@@ -1,6 +1,3 @@
-export const userDetails = () => {
-    return {
-        type: 'USER_DETAILS',
-        payload: {userName:'unassigned'}
-    }
-}
+import {USER_DETAILS} from "../constants/action-types";
+
+export const userDetails = (PuserName) => ({type: USER_DETAILS, payload: PuserName});

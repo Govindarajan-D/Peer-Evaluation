@@ -9,7 +9,8 @@ class SignUp extends React.Component{
     render(){
         return (<div className="signup-container">
                     <form>
-                        <input name="Name" type="text" value="" />
+                        <span>Name</span><input name="Name" type="text" value="" /><br/>
+                        <span>User Name</span><input name="User Name" type="text" value="" />
                     </form>
                 </div>);
     }
