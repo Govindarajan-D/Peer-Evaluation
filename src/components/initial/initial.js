@@ -1,5 +1,6 @@
 import React, {Component} from "react";
-import {login,signup,navbar} from "../index.js";
+import {Login,SignUp,NavBar} from "../index.js";
+import store from "../../store/index";
 import "./initial.css";
 
 class Initial extends React.Component{
@@ -47,4 +48,4 @@ class Initial extends React.Component{
         );
       }
 }
-export default initial;
+export default Initial;
