@@ -1,7 +1,12 @@
 import React, {Component} from "react";
 import {Login,SignUp,NavBar} from "../index.js";
+import {connect} from "react-redux";
 import store from "../../store/index";
 import "./initial.css";
+
+const mapStateToProps = state => {
+  return {PUserName: state.userName};
+};
 
 class Initial extends React.Component{
     constructor(props){
@@ -38,7 +43,6 @@ class Initial extends React.Component{
         });
       }
       fetchUserName = () => {
-        return "Govi2";
       }
       render() {
         return (<div>
@@ -48,4 +52,6 @@ class Initial extends React.Component{
         );
       }
 }
-export default Initial;
+
+const InitialComponent = connect(mapStateToProps)(Initial);
+export {InitialComponent as Initial};

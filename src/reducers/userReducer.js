@@ -1,7 +1,7 @@
 import {USER_DETAILS} from "../constants/action-types";
 
 const initialState = {
-    user_details: ""
+    user_details: []
 }
 export default function userReducer(state = initialState, action){
     switch(action.type){
