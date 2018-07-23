@@ -1,16 +1,25 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {GoogleLogin} from 'react-google-login';
+import {userDetails} from "../../actions/userAction";
+import {connect} from "react-redux";
 import './login.css'
 
 //This code can be removed before moving to production
 const googleResponse = (response) => {
     console.log(response);
 }
-class Login extends React.Component{
+const mapDispatchToProps = dispatch => { 
+    return{
+        passUserName: userName => dispatch(userDetails(userName))
+    };
+};
+class Login extends Component{
     constructor(props){
         super(props);
     }
     logIn = (e) => {
+        var usrname = "Govi";
+        this.props.passUserName({usrname});
         this.props.onLogin(true);
     }
     handleSignUpClick = (e) => {
@@ -58,4 +67,6 @@ class Login extends React.Component{
     }
 }
 
-export default Login;
+const LoginConnected = connect(null,mapDispatchToProps)(Login);
+
+export {LoginConnected as Login};

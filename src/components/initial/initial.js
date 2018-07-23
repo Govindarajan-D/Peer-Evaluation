@@ -1,11 +1,10 @@
 import React, {Component} from "react";
 import {Login,SignUp,NavBar} from "../index.js";
 import {connect} from "react-redux";
-import store from "../../store/index";
 import "./initial.css";
 
 const mapStateToProps = state => {
-  return {PUserName: state.userName};
+  return {PUserName: state.user_details};
 };
 
 class Initial extends React.Component{
@@ -28,21 +27,14 @@ class Initial extends React.Component{
           this.userName = this.fetchUserName();
         }
       }
-      changeLoginStatus = (loginStatus) => {
-        this.setState(store.getState());
-        this.setState({
-          loggedIn: loginStatus
-        });
-        this.checkLogin();
-    
+      changeLoginStatus = (loginStatus) => {    
       }
       renderSignUp = (userSignUp) => {
         this.pageToRender = (<SignUp />);
-        this.setState({
-          signUp:userSignUp
-        });
+        this.setState(this.state);
       }
       fetchUserName = () => {
+        console.log(this.props.PUserName);
       }
       render() {
         return (<div>
