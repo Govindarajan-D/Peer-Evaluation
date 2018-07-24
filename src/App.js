@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Initial} from './components/index';
-import { userReducer } from './reducers/userReducer';
-import { userDetails } from './actions/userAction';
 import {Provider} from "react-redux";
 import store from "./store/index";
 import './App.css';

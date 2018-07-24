@@ -19,7 +19,7 @@ class Login extends Component{
     }
     logIn = (e) => {
         var usrname = "Govi";
-        this.props.passUserName({usrname});
+        this.props.passUserName(usrname);
         this.props.onLogin(true);
     }
     handleSignUpClick = (e) => {

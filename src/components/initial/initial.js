@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React from "react";
 import {Login,SignUp,NavBar} from "../index.js";
 import {connect} from "react-redux";
 import "./initial.css";
@@ -25,22 +25,25 @@ class Initial extends React.Component{
           //Home page for user
           this.pageToRender = (<div>Yet to come</div>);
           this.userName = this.fetchUserName();
+          this.setState(this.state);
         }
       }
-      changeLoginStatus = (loginStatus) => {    
+      changeLoginStatus = (loginStatus) => {
+        this.pageToRender = (<div>Yet to come</div>);
+        this.setState({loggedIn:true});
       }
       renderSignUp = (userSignUp) => {
         this.pageToRender = (<SignUp />);
         this.setState(this.state);
       }
       fetchUserName = () => {
-        console.log(this.props.PUserName);
+        return this.props.PUserName[0];
       }
       render() {
         return (<div>
-                  <NavBar username={this.userName}/>
+                  <NavBar username={this.fetchUserName()}/>
                   {this.pageToRender}
-                </div>
+                  </div>
         );
       }
 }
